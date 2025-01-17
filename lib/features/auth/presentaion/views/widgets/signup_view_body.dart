@@ -36,6 +36,7 @@ class _SignupViewBodyState extends State<SignupViewBody> {
             left: kHorizintalPadding, right: kHorizintalPadding, top: 24),
         child: Form(
           key: formState,
+          autovalidateMode: autovalidateMode,
           child: Column(
             spacing: 16,
             children: [

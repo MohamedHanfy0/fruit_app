@@ -18,6 +18,7 @@ class _PasswordFieldState extends State<PasswordField> {
   @override
   Widget build(BuildContext context) {
     return TextFromField(
+      
       obscureText: obscureText,
       hintText: 'كلمة المرور',
       textInputType: TextInputType.visiblePassword,
