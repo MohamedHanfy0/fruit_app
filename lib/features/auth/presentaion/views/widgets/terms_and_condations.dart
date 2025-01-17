@@ -3,16 +3,18 @@ import 'package:fruit_app/core/utils/app_styles.dart';
 import 'package:fruit_app/core/utils/constans.dart';
 import 'package:fruit_app/features/auth/presentaion/views/widgets/custom_checkbox.dart';
 
-class terms_and_condations extends StatefulWidget {
-  const terms_and_condations({
+class TermsAndCondations extends StatefulWidget {
+  const TermsAndCondations({
     super.key,
+    required this.onChanged,
   });
+  final ValueChanged<bool> onChanged;
 
   @override
-  State<terms_and_condations> createState() => _terms_and_condationsState();
+  State<TermsAndCondations> createState() => _TermsAndCondationsState();
 }
 
-class _terms_and_condationsState extends State<terms_and_condations> {
+class _TermsAndCondationsState extends State<TermsAndCondations> {
   bool isAccepted = false;
 
   @override
@@ -45,9 +47,12 @@ class _terms_and_condationsState extends State<terms_and_condations> {
         ),
         CustomCheckbox(
           isCheck: isAccepted,
-          onChanged: (bool value) {
-            isAccepted = value;
-            setState(() {});
+          onChanged: (value) {
+             isAccepted = value;
+            widget.onChanged(value);
+            setState(() {
+             
+            });
           },
         )
       ],

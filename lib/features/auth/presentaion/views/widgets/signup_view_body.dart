@@ -4,6 +4,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fruit_app/core/helper_funcions/build_errors_bar.dart';
 
 import 'package:fruit_app/core/utils/app_colors.dart';
 import 'package:fruit_app/core/utils/app_styles.dart';
@@ -26,6 +27,7 @@ class _SignupViewBodyState extends State<SignupViewBody> {
   Widget build(BuildContext context) {
     // ignore: unused_local_variable
     late String email, password, userName;
+    bool isAccepted = false;
     GlobalKey<FormState> formState = GlobalKey();
     // ignore: unused_local_variable
     AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
@@ -58,7 +60,12 @@ class _SignupViewBodyState extends State<SignupViewBody> {
                   password = value!;
                 },
               ),
-              terms_and_condations(),
+              TermsAndCondations(
+                onChanged: (value) {
+                    isAccepted = value;
+                  
+                },
+              ),
               SizedBox(
                 height: 10,
               ),
@@ -67,9 +74,16 @@ class _SignupViewBodyState extends State<SignupViewBody> {
                 onPressed: () async {
                   if (formState.currentState!.validate()) {
                     formState.currentState!.save();
-                    context.read<SignupCubit>().createUserWithEmailAndPassword(
-                        email, password, userName);
 
+                    if (isAccepted) {
+                      context
+                          .read<SignupCubit>()
+                          .createUserWithEmailAndPassword(
+                              email, password, userName);
+                    } else {
+                      buildErrorBar(
+                          context, 'يجب عليك الموافقة علي الشروط والاحكام');
+                    }
                   } else {
                     setState(() {
                       autovalidateMode = AutovalidateMode.always;
@@ -99,4 +113,3 @@ class _SignupViewBodyState extends State<SignupViewBody> {
     );
   }
 }
-
