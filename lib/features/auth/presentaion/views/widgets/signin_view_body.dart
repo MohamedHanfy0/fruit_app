@@ -8,8 +8,8 @@ import 'package:fruit_app/features/auth/presentaion/views/widgets/dont_have_acco
 import 'package:fruit_app/features/auth/presentaion/views/widgets/or_divider.dart';
 import 'package:fruit_app/features/auth/presentaion/views/widgets/social_login_button.dart';
 
-class LoginViewBody extends StatelessWidget {
-  const LoginViewBody({super.key});
+class SingInViewBody extends StatelessWidget {
+  const SingInViewBody({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +22,8 @@ class LoginViewBody extends StatelessWidget {
             SizedBox(),
             TextFromField(
               hintText: 'البريد الإلكتروني',
-              textInputType: TextInputType.emailAddress, onSaved: (value) {  },
+              textInputType: TextInputType.emailAddress,
+              onSaved: (value) {},
             ),
             TextFromField(
               hintText: 'كلمة المرور',
@@ -30,7 +31,8 @@ class LoginViewBody extends StatelessWidget {
               icon: Icon(
                 Icons.remove_red_eye_sharp,
                 color: Color(0xffC9CECF),
-              ), onSaved: (value) {  },
+              ),
+              onSaved: (value) {},
             ),
             Container(
               margin: EdgeInsets.only(bottom: 17),

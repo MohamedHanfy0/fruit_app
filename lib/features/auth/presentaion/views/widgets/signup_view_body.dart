@@ -12,7 +12,7 @@ import 'package:fruit_app/core/utils/constans.dart';
 import 'package:fruit_app/core/widgets/custom_button.dart';
 import 'package:fruit_app/core/widgets/password_field.dart';
 import 'package:fruit_app/core/widgets/text_from_field.dart';
-import 'package:fruit_app/features/auth/presentaion/sign_up_cubits/cubit/signup_cubit.dart';
+import 'package:fruit_app/features/auth/presentaion/cubits/sign_up_cubit/signup_cubit.dart';
 import 'package:fruit_app/features/auth/presentaion/views/widgets/terms_and_condations.dart';
 
 class SignupViewBody extends StatefulWidget {

@@ -16,3 +16,4 @@ final class SignupFialure extends SignupState {
   final String message;
   SignupFialure({required this.message});
 }
+ 

@@ -3,7 +3,7 @@ import 'package:fruit_app/core/services/shared_preferance_singlaion.dart';
 import 'package:fruit_app/core/utils/app_colors.dart';
 import 'package:fruit_app/core/utils/constans.dart';
 import 'package:fruit_app/core/widgets/custom_button.dart';
-import 'package:fruit_app/features/auth/presentaion/views/login_view.dart';
+import 'package:fruit_app/features/auth/presentaion/views/sign_in_view.dart';
 import 'package:fruit_app/features/onBoarding/presentaion/view/widget/on_boarding_page_view.dart';
 
 class OnbardingViewBody extends StatefulWidget {
@@ -67,17 +67,19 @@ class _OnbardingViewBodyState extends State<OnbardingViewBody> {
           height: 10,
         ),
         Container(
-            padding: EdgeInsets.symmetric(horizontal: kHorizintalPadding),
-            margin: EdgeInsets.only(top: 29, bottom: 43),
-            child: Visibility(
-                visible: currentPage == 1 ? true : false,
-                child: CustomButton(
-                    onPressed: () {
-                      Prefs.setBool('checkOnboarding', true);
-                      Navigator.of(context)
-                          .pushReplacementNamed(LoginView.routName);
-                    },
-                    text: "ابدأ الان"),),),
+          padding: EdgeInsets.symmetric(horizontal: kHorizintalPadding),
+          margin: EdgeInsets.only(top: 29, bottom: 43),
+          child: Visibility(
+            visible: currentPage == 1 ? true : false,
+            child: CustomButton(
+                onPressed: () {
+                  Prefs.setBool('checkOnboarding', true);
+                  Navigator.of(context)
+                      .pushReplacementNamed(SignInView.routName);
+                },
+                text: "ابدأ الان"),
+          ),
+        ),
       ],
     );
   }

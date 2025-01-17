@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:fruit_app/core/services/shared_preferance_singlaion.dart';
-import 'package:fruit_app/features/auth/presentaion/views/login_view.dart';
+import 'package:fruit_app/features/auth/presentaion/views/sign_in_view.dart';
 import 'package:fruit_app/features/onBoarding/presentaion/view/onboarding_view.dart';
 
 class SplashViewBody extends StatefulWidget {
@@ -37,12 +37,12 @@ class _SplashViewBodyState extends State<SplashViewBody> {
   }
 
   void excuteNavigation() {
-    Future.delayed(const Duration(seconds: 2 ), () {
+    Future.delayed(const Duration(seconds: 2), () {
       // ignore: use_build_context_synchronously
-      if (Prefs.getBool('checkOnboarding') == false ) {
-        Navigator.of(context).pushReplacementNamed( OnboardingView.routName);
+      if (Prefs.getBool('checkOnboarding') == false) {
+        Navigator.of(context).pushReplacementNamed(OnboardingView.routName);
       } else {
-        Navigator.of(context).pushReplacementNamed( LoginView.routName);
+        Navigator.of(context).pushReplacementNamed(SignInView.routName);
       }
     });
   }

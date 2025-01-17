@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:fruit_app/core/services/shared_preferance_singlaion.dart';
 import 'package:fruit_app/core/utils/app_styles.dart';
-import 'package:fruit_app/features/auth/presentaion/views/login_view.dart';
+import 'package:fruit_app/features/auth/presentaion/views/sign_in_view.dart';
 
 class PageViewItem extends StatelessWidget {
   const PageViewItem(
@@ -49,7 +49,7 @@ class PageViewItem extends StatelessWidget {
                         onTap: () {
                           Prefs.setBool('checkOnboarding', true);
                           Navigator.of(context)
-                              .pushReplacementNamed(LoginView.routName);
+                              .pushReplacementNamed(SignInView.routName);
                         },
                         child: Text(
                           'تخط',

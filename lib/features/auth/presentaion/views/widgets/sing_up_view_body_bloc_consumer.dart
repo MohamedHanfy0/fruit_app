@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruit_app/core/helper_funcions/build_errors_bar.dart';
-import 'package:fruit_app/features/auth/presentaion/sign_up_cubits/cubit/signup_cubit.dart';
+import 'package:fruit_app/features/auth/presentaion/cubits/sign_up_cubit/signup_cubit.dart';
 import 'package:fruit_app/features/auth/presentaion/views/widgets/signup_view_body.dart';
 import 'package:loading_overlay/loading_overlay.dart';
 
